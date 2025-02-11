@@ -29,6 +29,7 @@ module.exports = {
 
     // modul
 
+    
     // louder
     module: {
         rules: [
@@ -52,6 +53,7 @@ module.exports = {
         ],
         
     },
+
 
     // plugins
     plugins: [
