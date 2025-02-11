@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 module.exports = {
     // mode
-    mode: "development",  //prodaction  
+    mode: "production",  //development  
     // entry
     entry: {
         main: path.resolve(__dirname, "src/js/main.js"),
@@ -36,7 +36,21 @@ module.exports = {
                 test: /\.css$/i,
                 use: [MiniCssExtractPlugin.loader, "css-loader"],
               },
+              {
+                test: /\.(?:js|mjs|cjs)$/,
+                exclude: /node_modules/,
+                use: {
+                  loader: 'babel-loader',
+                  options: {
+                    targets: "defaults",
+                    presets: [
+                      ['@babel/preset-env']
+                    ]
+                  }
+                }
+              }
         ],
+        
     },
 
     // plugins
