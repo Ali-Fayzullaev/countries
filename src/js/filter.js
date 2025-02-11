@@ -1,21 +1,29 @@
 const searchEl = document.getElementById("search");
 
-searchEl.addEventListener("input", () => {
-    countCards.innerHTML = ""; 
+// import { countCards } from "./main";
 
-    const search = searchEl.value.toLowerCase();
-    const cardsTitle = document.querySelectorAll(".cards-title");
-
-    cardsTitle.forEach(title => {
-        const card = title.closest(".cards"); // O'sha title tegishli bo'lgan kartani topish
-        
-        if (title.textContent.toLowerCase().includes(search)) {
-            card.classList.remove("d-none"); // Agar mos kelsa, ko'rsatish
-        } else {
-            card.classList.add("d-none"); // Mos kelmasa, yashirish
-        }
+if (!searchEl) {
+    console.log("SearchEl not Found");
+} else {
+    searchEl.addEventListener("input", () => {
+        // countCards.innerHTML = ""; 
+    
+        const search = searchEl.value.toLowerCase();
+        const cardsTitle = document.querySelectorAll(".cards-title");
+    
+        cardsTitle.forEach(title => {
+            const card = title.closest(".cards"); 
+            
+            if (title.textContent.toLowerCase().includes(search)) {
+                card.classList.remove("d-none"); 
+            } else {
+                card.classList.add("d-none"); 
+            }
+        });
     });
-});
+}
+
+
 
 import { createCountries } from "./ubdateUl";
 import request from "./request";

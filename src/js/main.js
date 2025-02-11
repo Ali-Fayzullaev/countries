@@ -1,6 +1,8 @@
 import "../css/main.css";
 import "./filter";
 import "./request"
+import "./mode";
+import "./ubdateUl"
 import request from "./request";
 import { createCountries } from "./ubdateUl";
 

@@ -53,3 +53,27 @@ img {
   .dropdown:hover .dropdown-menu {
     display: block;
   }
+
+  
+
+  .bg-dark {
+    background-color: #212B37 !important;
+  }
+  .text-light {
+    color: rgb(255, 255, 255) !important;  
+  }
+
+  .mode {
+    color: black; /* Light mode'да стандарт матн ранги */
+}
+
+  .mode.bg-dark {
+      color: white; /* Dark mode'га ўтганда матн оқ бўлади */
+  }
+
+  #search::placeholder {
+    color: rgb(119, 119, 119); /* Dark mode'да оқ */
+    opacity: 1;
+}
+
+
